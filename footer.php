@@ -7,9 +7,9 @@
                         <a href="./"><img src="images/logo.png" alt=""></a>
                     </div>
                     <ul>
-                        <li>Address: </li>
-                        <li>Phone: +998 (99) 779 99 33</li>
-                        <li>Email: iilhomjonov777@gmail.com</li>
+                        <li>Address: Qaluib </li>
+                        <li>Phone: +2012775555559</li>
+                        <li>Email: omarhatemf12@gmail.com</li>
                     </ul>
                 </div>
             </div>
