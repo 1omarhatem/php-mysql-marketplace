@@ -29,7 +29,7 @@ function active($Page, $Menu)
                         <a href="#" class="nav-link <?php echo ($Page === 'product') ? 'active' : ''; ?>">
                             <i class="nav-icon fas fa-shopping-cart"></i>
                             <p>
-                                Mahsulot
+                            Product
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -37,7 +37,7 @@ function active($Page, $Menu)
                             <li class="nav-item">
                                 <a href="./" class="nav-link <?php echo ($Menu === 'products') ? 'active' : ''; ?>">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Mahsulotlarim</p>
+                                    <p>My products</p>
                                 </a>
                             </li>
                         </ul>
@@ -45,7 +45,7 @@ function active($Page, $Menu)
                             <li class="nav-item">
                                 <a href="./addproduct.php" class="nav-link <?php echo ($Menu === 'addproduct') ? 'active' : ''; ?>">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Qo'shish</p>
+                                    <p>Add products</p>
                                 </a>
                             </li>
                         </ul>
@@ -54,7 +54,7 @@ function active($Page, $Menu)
                     <li class="nav-item">
                         <a onclick="logout()" class="nav-link <?php echo ($Menu === 'users') ? 'active' : ''; ?>">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Chiqish</p>
+                            <p>Exit</p>
                         </a>
                     </li>
 
@@ -103,14 +103,14 @@ function pagePath($pageTitle, $breadcrumb)
 <script>
     function logout() {
         Swal.fire({
-            title: 'Aniq chiqmoqchimisiz?',
-            text: "Siz bu amalni bekor qilolmaysiz!",
+            title: 'Are you sure you want to go out?',
+            text: "You cannot undo this action!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Ha, chiqaman!',
-            cancelButtonText: 'Bekor qilish'
+            confirmButtonText: 'Yes, I will go out!',
+            cancelButtonText: 'Cancellation'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = '../logout/';

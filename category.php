@@ -140,7 +140,7 @@ $name = $query->select('categories', 'category_name', "where id = '$category_id'
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Mahsulot savatchaga qo\'shildi!',
+                        title: 'The product has been added to the cart!',
                         showConfirmButton: false,
                         timer: 1500
                     }).then(() => {
@@ -160,7 +160,7 @@ $name = $query->select('categories', 'category_name', "where id = '$category_id'
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Mahsulot izohga qo\'shildi!',
+                        title: 'The product has been added to the comment!',
                         showConfirmButton: false,
                         timer: 1500
                     }).then(() => {

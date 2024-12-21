@@ -72,7 +72,7 @@ $product = $query->getProduct($product_id);
                             </div>
                         </div>
                         <p><?php echo $product['description'] ?></p>
-                        <a href="/" class="primary-btn">Mahsulotlarga qaytish</a>
+                        <a href="/" class="primary-btn">Back to products</a>
                         <ul>
                             <li><b>Categoriya</b>
                                 <span><? echo $query->select('categories', 'category_name', 'WHERE id=' . $product['category_id'])[0]['category_name'] ?></span>

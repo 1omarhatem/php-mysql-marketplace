@@ -48,12 +48,12 @@ if (isset($_GET['product_id'])) {
 
             <!-- Content Header (Page header) -->
             <?php
-            $arr = array(
-                ["title" => "Home", "url" => "/"],
-                ["title" => "Mahsulot", "url" => "/"],
-                ["title" => "Mahsulotlarim", "url" => "#"],
-            );
-            pagePath('Mahsulotlarim', $arr);
+           $arr = array(
+            ["title" => "Home", "url" => "/"],
+            ["title" => "Product", "url" => "/"],
+            ["title" => "Add", "url" => "#"],
+          );
+            pagePath('My products', $arr);
             ?>
 
 
@@ -64,7 +64,7 @@ if (isset($_GET['product_id'])) {
                         <div class="col-md-6">
                             <div class="card card-primary">
                                 <div class="card-header">
-                                    <h3 class="card-title">Mahsulotni tahrirlash</h3>
+                                    <h3 class="card-title">Edit the product</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
@@ -73,12 +73,12 @@ if (isset($_GET['product_id'])) {
                                     <div class="card-body">
                                         <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
                                         <div class="form-group">
-                                            <label for="name">Mahsulot nomi:</label>
+                                            <label for="name">Product name:</label>
                                             <input type="text" class="form-control" id="name" name="name"
                                                 value="<?php echo $product['name']; ?>" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="category_id">Mahsulot Kategoriyasi:</label>
+                                            <label for="category_id">Product Category:</label>
                                             <select class="form-control" id="category_id" name="category_id" required>
                                                 <?php foreach ($categories as $id => $category_name) { ?>
                                                     <option value="<?php echo $id; ?>" <?php if ($id == $product['category_id'])
@@ -89,28 +89,28 @@ if (isset($_GET['product_id'])) {
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="price_old">Eski narxi:</label>
+                                            <label for="price_old">Old Price:</label>
                                             <input type="number" class="form-control" id="price_old" name="price_old"
                                                 value="<?php echo $product['price_old']; ?>" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="price_current">Joriy narxi:</label>
+                                            <label for="price_current">Current price:</label>
                                             <input type="number" class="form-control" id="price_current"
                                                 name="price_current" value="<?php echo $product['price_current']; ?>"
                                                 required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="description">Ta'rif:</label>
+                                            <label for="description">description:</label>
                                             <textarea class="form-control" id="description" name="description" rows="3"
                                                 required><?php echo $product['description']; ?></textarea>
                                         </div>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="image" name="image[]"
                                                 accept="image/*" multiple>
-                                            <label class="custom-file-label" for="image">Rasmlarni tanlang...</label>
+                                            <label class="custom-file-label" for="image">Select pictures...</label>
                                         </div>
                                         <div class="form-group">
-                                            <label for="quantity">Miqdor:</label>
+                                            <label for="quantity">Quantity:</label>
                                             <input type="number" class="form-control" id="quantity" name="quantity"
                                                 value="<?php echo $product['quantity']; ?>" required>
                                         </div>
@@ -118,7 +118,7 @@ if (isset($_GET['product_id'])) {
                                     <!-- /.card-body -->
 
                                     <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary">Saqlash</button>
+                                        <button type="submit" class="btn btn-primary">Save</button>
                                     </div>
                                 </form>
                             </div>
@@ -150,7 +150,7 @@ if (isset($_GET['product_id'])) {
 
     <script>
         function delete_product(productId) {
-            if (confirm("Mahsulotni o'chirmoqchimisiz?")) {
+            if (confirm("Do you want to delete the product??")) {
                 window.location.href = 'delete_product.php?product_id=' + productId;
             }
         }
@@ -167,7 +167,7 @@ if (isset($_GET['product_id'])) {
         function checkFilesCount() {
             let files = document.getElementById('image').files;
             if (files.length > 7) {
-                alert("Siz faqatgina maksimum 7ta rasmlarni tanlashingiz mumkin.");
+                alert("You can only select a maximum of 7 images.");
                 return false;
             }
             return true;
