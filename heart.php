@@ -123,13 +123,13 @@ $cartItemsHeart = $query->getWishes($_SESSION['id']);
         function removeCartItem(itemId) {
             // SweetAlert orqali confirm dialogi
             Swal.fire({
-                title: 'Haqiqatdan ham ushbu mahsulotni savatdan o\'chirmoqchimisiz?',
+                title: 'Are you sure you want to remove this product from the cart?',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Ha, o\'chirish!',
-                cancelButtonText: 'Bekor qilish'
+                confirmButtonText: 'Yes, off!',
+                cancelButtonText: 'Cancellation'
             }).then((result) => {
                 if (result.isConfirmed) {
                     var xhr = new XMLHttpRequest();
@@ -139,7 +139,7 @@ $cartItemsHeart = $query->getWishes($_SESSION['id']);
                         if (xhr.status == 200) {
                             Swal.fire({
                                 icon: 'success',
-                                title: 'Mahsulot muvaffaqiyatli o\'chirildi!',
+                                title: 'Product successfully deleted!',
                                 showConfirmButton: false,
                                 timer: 1500
                             }).then(() => {
@@ -148,7 +148,7 @@ $cartItemsHeart = $query->getWishes($_SESSION['id']);
                         } else {
                             Swal.fire({
                                 icon: 'error',
-                                title: 'Xato yuz berdi!',
+                                title: 'An error occurred!',
                                 text: xhr.statusText
                             });
                         }
@@ -169,7 +169,7 @@ $cartItemsHeart = $query->getWishes($_SESSION['id']);
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Mahsulot savatchaga qo\'shildi!',
+                        title: 'The product has been added to the cart!',
                         showConfirmButton: false,
                         timer: 1500
                     });

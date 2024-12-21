@@ -35,7 +35,7 @@
       <?php
       $arr = array(
         ["title" => "Home", "url" => "/"],
-        ["title" => "Mahsulot", "url" => "/"],
+        ["title" => "Product", "url" => "/"],
         ["title" => "Qo'shish", "url" => "#"],
       );
       pagePath('Mahsulot qo\'shish', $arr);
