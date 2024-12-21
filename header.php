@@ -138,7 +138,7 @@ function countTable($table)
             <div class="col-lg-9">
                 <div class="hero__search">
                     <div class="hero__search__form">
-                        <form action="">
+                        <form action="#">
                             <div class="hero__search__categories">
                             All Categories                            </div>
                             <input type="text" placeholder="What do you need?">
